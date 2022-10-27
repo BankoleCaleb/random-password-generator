@@ -130,7 +130,13 @@ div#alphanumeric > .alphanumeric {
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: pre-wrap;
+}
 
+.passwords > p {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .password-text {
