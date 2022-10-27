@@ -1,0 +1,167 @@
+body {
+    background-color: #1F2937;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 115px 20px;
+}
+
+.heading {
+    font-family: 'Karla', sans-serif;
+    color: white;
+    margin: 0;
+}
+
+.h1-color {
+    color: #10B981;
+}
+
+.bottom-text {
+    color: white;
+
+}
+
+.more-options > * {
+    display: none;
+    padding-top: 20px;
+}
+
+div#readablepassphrase > .readablepassphrase, 
+div#passphrase > .passphrase, 
+div#pronounceable > .pronounceable,
+div#pin > .pin,
+div#alphanumeric > .alphanumeric {
+    display: block;
+}
+
+.readablepassphrase > div {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-container {
+    flex-direction: column;
+
+}
+
+.first-col, .second-col {
+    width: 100%;
+}
+
+.second-col {
+    margin-top: 30px;
+}
+
+[type="search"] {
+    color: white;
+    background-color: #2F3E53;
+    border-radius: 50px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    outline: none;
+}
+
+.options {
+    
+    background-color: #2F3E53;
+    color: white;
+}
+
+.note {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.password-generator {
+    color: white;
+    background-color: #10B981;
+    border: none;
+    padding: 5px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.line {
+    outline: none;
+    background-color: #2F3E53;
+    border: 1px solid #2F3E53;
+    margin: 24px 0;
+}
+
+@media (min-width: 500px) {
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        width: 400px;
+    }
+
+    .f1 {
+        align-content: flex-end;
+    }
+
+    .passwords {
+        width: 230px;
+        display: inline-block;
+    }
+
+    .top-container {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+}
+
+.passwords {
+    background-color: #2F3E53;
+    min-height: 50px;
+    padding-right: 30px;
+    margin: 5px 0px;
+    display: block;
+    border-radius: 9px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.password-text {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #55F991;
+}
+
+.copy {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.copy:active {
+    color: #55F991;
+}
+
+.fa-ellipsis, .fa-copy {
+    color: white;
+}
+
+
+/* 
+#10B981
+#1F2937
+#2F3E53
+#55F991
+karla
+inter
+*/

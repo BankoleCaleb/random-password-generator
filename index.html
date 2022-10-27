@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure password generator</title>
+
+    <script src="https://kit.fontawesome.com/370266e6a9.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="icons.png">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="top-container">
+        <div class="first-col">
+            
+            <h1 class="heading">Generate a 
+                <br>
+                <span class="h1-color">random password</span>
+            </h1>
+            <div class="bottom-text" style="margin: 10px 0">Never use an insecure password again.</div>
+
+            <button class="password-generator" id="password-generator">
+                <i class="fa-solid fa-bolt"></i>
+                Generate password
+            </button>
+        </div>
+
+        <div class="second-col">
+            <input type="search" value="Readable passphrase">
+            <div class="more-options" id="readablepassphrase">
+                <div class="readablepassphrase">
+                    <div>
+                        <form id="strength">
+                            
+                            <strong>STRENGTH</strong><br>
+                            <input value="" type="radio" id="normal" name="strength" value="Normal" checked> &nbsp; &nbsp; <span>Normal</span><br>
+
+                            <input value="Strong" type="radio" id="strong" name="strength"> &nbsp; &nbsp; <span>Strong</span><br>
+
+                            <input value="Insane" type="radio" id="strong" name="strength"> &nbsp; &nbsp; <span>Insane</span><br>
+                        </form>
+
+                        <form id="fake">
+                            
+                            <strong>Add fake words</strong><br>
+                            <input value="Y" type="radio" id="f-true" name="fake"> &nbsp; &nbsp; <span>No</span><br>
+
+                            <input value="N" type="radio" id="f-false" name="fake" checked> &nbsp; &nbsp; <span>Yes</span><br>
+                        </form>
+
+                        <form id="when-num">
+                            
+                            <strong>When to add number</strong><br>
+                            <input value="StartOfWord" type="radio" id="start" name="number"> &nbsp; &nbsp; <span>Start of word</span><br>
+
+                            <input value="Never" type="radio" id="end" name="number"> &nbsp; &nbsp; <span>Never</span><br>
+
+                            <input value="Anywhere" type="radio" id="anywhere" name="number" checked> &nbsp; &nbsp; <span>anywhere</span><br>
+                        </form>
+
+                        <form id="when-caps">
+                            
+                            <strong>When to add capital letter</strong><br>
+                            
+                            <input value="Never" type="radio" id="never" name="caps"> &nbsp; &nbsp; <span>Never</span><br>
+
+                            <input value="Anywhere" type="radio" id="cap-anywhere" name="caps" checked> &nbsp; &nbsp; <span>Anywhere</span><br>
+
+                            <input value="StartOfWord" type="radio" id="cap-anywhere" name="caps" > &nbsp; &nbsp; <span>Start of word</span><br>
+
+                            <!-- <input type="number" placeholder="input number of phrase(s)" id="phrase-count"> -->
+                        </form>
+                    </div>
+                </div>
+
+                <div class="passphrase">
+                    <div>
+                        <input type="number" placeholder="Word count" id="wordCount">
+                        <form id="pass-when-num">
+                            
+                            <strong>When to add number</strong><br>
+                            <input value="StartOfWord" type="radio" id="start" name="pass-number"> &nbsp; &nbsp; <span>Start of word</span><br>
+
+                            <input value="Never" type="radio" id="end" name="pass-number"> &nbsp; &nbsp; <span>Never</span><br>
+
+                            <input value="Anywhere" type="radio" id="anywhere" name="pass-number" checked> &nbsp; &nbsp; <span>Anywhere</span><br>
+                        </form>
+
+                        <form id="pass-when-caps">
+                            
+                            <strong>When to add capital letter</strong><br>
+                            
+                            <input value="Never" type="radio" id="never" name="pass-caps"> &nbsp; &nbsp; <span>Never</span><br>
+
+                            <input value="Anywhere" type="radio" id="cap-anywhere" name="pass-caps" checked> &nbsp; &nbsp; <span>Anywhere</span><br>
+
+                            <input value="StartOfWord" type="radio" id="start" name="pass-caps"> &nbsp; &nbsp; <span>Start of word</span><br>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="pronounceable">
+                    <input value="" type="number" id="syllable-count" placeholder="Number of syllables" min="4" max="11"> 👈 Select number of syllables (Between 4 and 11)
+                </div>
+
+                <div class="pin">
+                    <input value="" type="number" id="digit-count" placeholder="Number of digits" min="4" max="20"> 👈 Select number of digits you want the pin to be (Between 4 and 11)
+                </div>
+
+                <div class="alphanumeric">
+                    <input value="" type="number" name="length" id="length" min="7" max="30"> &nbsp; &nbsp; <span>Length of password</span> <br>
+                    <span>Include special symbol?</span>
+                    <input value="T" type="radio" name="symbol" id="symbol" checked> &nbsp; &nbsp; Yes
+                    <input value="F" type="radio" name="symbol" id="symbol" > &nbsp; &nbsp; No
+                </div>
+            </div>
+            <div>
+                <div class="note">Select password option. 👇</div>
+                <select class="options">
+                    <option value="readablepassphrase">Readable passphrase</option>
+                    <option value="passphrase">Dictionary passphrase</option>
+                    <option value="pronounceable">Pronounceable password</option>
+                    <option value="pin">pin</option>
+                    <option value="alphanumeric">alphanumeric</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <hr class="line">
+
+    <main class="main">
+
+        <div class="passwords" >
+            <p id="p1"><i class="fa-solid fa-ellipsis"></i></p>
+            <i class="fa-solid fa-copy copy" onclick="copyToClipboard('#p1')"></i>
+        </div>
+    
+        <div class="passwords" >
+            <p id="p2"><i class="fa-solid fa-ellipsis"></i></p>
+            <i class="fa-solid fa-copy copy" onclick="copyToClipboard('#p2')"></i>
+        </div>
+
+        <div class="passwords" >
+            <p id="p3"><i class="fa-solid fa-ellipsis"></i></p>
+            <i class="fa-solid fa-copy copy" onclick="copyToClipboard('#p3')"></i>
+        </div>
+    
+        <div class="passwords" >
+            <p id="p4"><i class="fa-solid fa-ellipsis"></i></p>
+            <i class="fa-solid fa-copy copy" onclick="copyToClipboard('#p4')"></i>
+        </div>
+    
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="index.js"></script>
+</body>
+</html>
