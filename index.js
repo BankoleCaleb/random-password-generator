@@ -1,16 +1,4 @@
-// let p1 = document.getElementById("p1");
-// let p2 = document.getElementById("p2");
-// let p3 = document.getElementById("p3");
-// let p4 = document.getElementById("p4");
 let button = document.querySelector("button");
-
-// p1.innerText ="Caleb";
-// p1.classList.remove("fa-ellipsis");
-// p1.classList.remove("fa-solid");
-// p1.classList.toggle("password-text")
-
-
-
 
 const generateRandomPassword = async () => {
     let input = document.querySelector("#phrase-count");
@@ -122,7 +110,11 @@ function copyToClipboard(element) {
     $temp.val($(element).text()).select();
     document.execCommand("copy");
     $temp.remove();
-    alert("password copied to clipboard.")
+    let animation = document.querySelector(".copy-parent")
+    animation.classList.add('copy-visible');
+    setTimeout(() => {
+        animation.classList.remove("copy-visible")
+    }, 1000)
 }
 
 let options = document.querySelector("select")

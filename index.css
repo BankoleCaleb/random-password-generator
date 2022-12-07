@@ -5,6 +5,34 @@ body {
     margin: 115px 20px;
 }
 
+.main {
+    position: relative;
+    overflow: hidden;
+}
+
+.copy-parent {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translate(0, -100%);
+    transition: all 500ms;
+    z-index: 9;
+}
+
+
+.copyMessage {
+    font-weight: bold;
+    background-color: #10B981;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+}
+.copy-visible {
+    transform: translate(0, 100%);
+    opacity: 1;
+}
+
 .heading {
     font-family: 'Karla', sans-serif;
     color: white;
@@ -93,13 +121,13 @@ div#alphanumeric > .alphanumeric {
     margin: 24px 0;
 }
 
-@media (min-width: 500px) {
+@media (width > 500px) {
 
     .main {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
-        width: 400px;
+        width: fit-content;
     }
 
     .f1 {
